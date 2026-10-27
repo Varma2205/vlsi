@@ -1,0 +1,1 @@
+module up_counter_tb; reg clk=0,rst_n=0,enable=1; wire [3:0] count; up_counter #(.WIDTH(4)) dut(clk,rst_n,enable,count); always #5 clk=~clk; initial begin #12 rst_n=1;repeat(3) @(posedge clk);#1;if(count!==3)$fatal(1,"Counter expected 3");$display("Counter tests passed");$finish;end endmodule
