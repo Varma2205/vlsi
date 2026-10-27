@@ -1,0 +1,1 @@
+module alu_tb; reg [7:0] a,b; reg [2:0] op; wire [7:0] y; wire zero; alu dut(a,b,op,y,zero); initial begin a=12;b=3;op=0;#10;if(y!==15)$fatal(1,"ADD failed");op=1;#10;if(y!==9)$fatal(1,"SUB failed");op=2;#10;if(y!==0)$fatal(1,"AND failed");op=3;#10;if(y!==15)$fatal(1,"OR failed");$display("ALU tests passed");$finish;end endmodule
