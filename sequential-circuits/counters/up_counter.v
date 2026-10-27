@@ -1,0 +1,1 @@
+module up_counter #(parameter WIDTH=4)(input wire clk,rst_n,enable,output reg [WIDTH-1:0] count); always @(posedge clk or negedge rst_n) if(!rst_n) count<=0; else if(enable) count<=count+1'b1; endmodule
