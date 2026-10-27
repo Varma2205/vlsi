@@ -1,0 +1,1 @@
+module shift_register(input wire clk,rst_n,shift_en,serial_in,output reg [3:0] q,output wire serial_out); assign serial_out=q[3]; always @(posedge clk or negedge rst_n) if(!rst_n) q<=0; else if(shift_en) q<={q[2:0],serial_in}; endmodule
