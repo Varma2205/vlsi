@@ -1,0 +1,1 @@
+module d_flip_flop_tb; reg clk=0,rst_n=0,d=0; wire q; d_flip_flop dut(clk,rst_n,d,q); always #5 clk=~clk; initial begin #12 rst_n=1;d=1;#10;if(q!==1)$fatal(1,"DFF capture failed");d=0;#10;if(q!==0)$fatal(1,"DFF capture failed");$display("DFF tests passed");$finish;end endmodule
